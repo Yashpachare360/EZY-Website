@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ===== REMOVE UNDERLINE FROM ALL LINKS ===== */
+a{
+    text-decoration: none;
+    border-bottom: none;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    background: #000;
+    color: #fff;
+}
+
+/* ===== HEADER ===== */
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    background: rgba(0,0,0,0.8);
+    backdrop-filter: blur(10px);
+}
+
+/* ===== LOGO ===== */
+.logo{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 2.6rem;
+    font-weight: 700;
+    color: #0AB0F2;
+}
+
+.logo img{
+    width: 100px;
+    height: 100px;
+}
+
+/* ===== NAVBAR ===== */
+.navbar a{
+    font-size: 1.6rem;
+    color: #fff;
+    margin-left: 3rem;
+    transition: 0.3s;
+    text-decoration: none;
+    border-bottom: none;
+}
+
+.navbar a:hover,
+.navbar a.active{
+    color: #0AB0F2;
+    text-decoration: none;
+}
+
+#menu-icon{
+    font-size: 2.8rem;
+    color: #0AB0F2;
+    display: none;
+    cursor: pointer;
+}
+
+/* ===== HOME ===== */
+.home{
+    min-height: 100vh;
+    padding: 10rem 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6rem;
+}
+
+.home-content{
+    max-width: 600px;
+}
+
+.home-content h1{
+    font-size: 5.5rem;
+}
+
+.home-content h3{
+    font-size: 3.2rem;
+    margin: 1rem 0;
+}
+
+.home-content p{
+    font-size: 1.6rem;
+    margin: 2rem 0;
+    line-height: 1.7;
+}
+
+span{
+    color: #0AB0F2;
+}
+
+/* ===== IMAGE ===== */
+.home-img img{
+    width: 380px;
+    border-radius: 50%;
+    box-shadow: 0 0 40px #0AB0F2;
+}
+
+/* ===== SOCIAL ICONS ===== */
+.social-icons a{
+    display: inline-flex;
+    width: 4rem;
+    height: 4rem;
+    margin-right: 1.5rem;
+    border: 2px solid #0AB0F2;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    color: #0AB0F2;
+    font-size: 1.8rem;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.social-icons a:hover{
+    background: #0AB0F2;
+    color: #000;
+    transform: translateY(-5px);
+}
+
+/* ===== BUTTON ===== */
+.btn{
+    display: inline-block;
+    margin-top: 3rem;
+    padding: 1.2rem 3.2rem;
+    border-radius: 4rem;
+    border: 2px solid #0AB0F2;
+    color: #0AB0F2;
+    font-size: 1.6rem;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.btn:hover{
+    background: #0AB0F2;
+    color: #000;
+}
+
+/* ===== TYPING TEXT ===== */
+.typing-text span::before{
+    content: "Tournament Organizer";
+    animation: words 10s infinite;
+}
+
+@keyframes words{
+    0%,25%{ content: "Tournament Organizer"; }
+    26%,50%{ content: "Esports Manager"; }
+    51%,75%{ content: "Streamer"; }
+    76%,100%{ content: "Content Creator"; }
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width: 900px){
+    #menu-icon{
+        display: block;
+    }
+
+    .navbar{
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: #111;
+        width: 220px;
+        display: none;
+        flex-direction: column;
+    }
+
+    .navbar a{
+        padding: 1.5rem;
+        margin: 0;
+        text-decoration: none;
+        border-bottom: none;
+    }
+
+    .navbar.active{
+        display: flex;
+    }
+
+    .home{
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .home-img img{
+        width: 260px;
+    }
+}
